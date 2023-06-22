@@ -6,13 +6,14 @@
 <session-factory>
 
 <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatetest</property>
 <property name="hibernate.connection.username">root</property>
 <property name="hibernate.connection.password">Skmania@1234</property>
-<property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
-<property name="hbm2ddl.auto">create</property>
+<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+<property name="hbm2ddl.auto">update</property>
 <property name="show_sql">true</property>
-
-<mapping resource="student.hbm.xml"></mapping>
+<mapping class="com.softura.Customer" />
+<mapping class="com.softura.Transection" />
 </session-factory>
 </hibernate-configuration>
+
