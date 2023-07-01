@@ -33,6 +33,18 @@ public class EmployeeController {
 		return employeeService.getAllEmployee();
 	}
 
+	// get all list of employees by pagination
+	@GetMapping("/allEmp/{page}")
+	public List<Employee> getEmployeeByPage(@PathVariable int page){
+		return employeeService.getAllEmployeeByPage(page, 2);
+	}
+	
+	// get all list of employees sorted
+	@GetMapping("/allEmpSorted")
+	public List<Employee> getAllBySorting(){
+		return employeeService.getAllEmployeeBySorting();
+	}
+	
 	// get Employee by id using path variable
 	@GetMapping("/{id}")
 	public Employee getEmpById(@PathVariable int id) {
@@ -61,5 +73,8 @@ public class EmployeeController {
 		String response = employeeService.deleteEmployeeById(id);
 		return response;
 	}
+	
+	
+	
 	
 }
